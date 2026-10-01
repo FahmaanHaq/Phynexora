@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Phynexora.Api</RootNamespace>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <!--
+      SQL Server persistence via EF Core is ON by default.
+      Build with  -p:UseSqlServer=false  to compile without EF Core
+      (uses the JSON file store — useful for local demos / CI without NuGet).
+    -->
+    <UseSqlServer Condition="'$(UseSqlServer)' == ''">true</UseSqlServer>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(UseSqlServer)' == 'true'">
+    <DefineConstants>$(DefineConstants);SQLSERVER</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(UseSqlServer)' == 'true'">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.11" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(UseSqlServer)' != 'true'">
+    <Compile Remove="Data/Ef/**" />
+  </ItemGroup>
+
+</Project>

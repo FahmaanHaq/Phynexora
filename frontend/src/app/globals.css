@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------
+   Phynexora design tokens
+   Dark is the signature look; light mode mirrors every token.
+------------------------------------------------------------------- */
+:root {
+  --bg: #f6f8fc;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #eef2fa;
+  --line: #dde4f1;
+  --line-strong: #c5d0e4;
+  --fg: #0a1023;
+  --muted: #47536f;
+  --subtle: #6f7b98;
+  --primary: #2563eb;
+  --primary-2: #4f46e5;
+  --primary-text: #1d4ed8;
+  --cyan: #0891b2;
+  --violet: #7c3aed;
+  --glow: 37 99 235;
+  --shadow-color: 15 23 42;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #05070d;
+  --bg-elevated: #090d18;
+  --surface: #0c1222;
+  --surface-2: #111a2e;
+  --line: #1a2440;
+  --line-strong: #26345a;
+  --fg: #eef2ff;
+  --muted: #9aa6c4;
+  --subtle: #66728f;
+  --primary: #2563eb;
+  --primary-2: #4f46e5;
+  --primary-text: #7ea6ff;
+  --cyan: #22d3ee;
+  --violet: #a78bfa;
+  --glow: 61 123 255;
+  --shadow-color: 0 0 0;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-elevated: var(--bg-elevated);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-primary: var(--primary);
+  --color-primary-2: var(--primary-2);
+  --color-primary-text: var(--primary-text);
+  --color-cyan: var(--cyan);
+  --color-violet: var(--violet);
+  --color-whatsapp: #1fa855;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --radius-xl2: 1.25rem;
+  --radius-xl3: 1.75rem;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 10s ease-in-out infinite;
+  --animate-dash: dash 1.6s linear infinite;
+  --animate-pulse-ring: pulse-ring 2.6s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
+  --animate-fade-up: fade-up 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-scale-in: scale-in 0.28s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-spin-slow: spin 40s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes dash {
+    to { stroke-dashoffset: -24; }
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.55; }
+    80%, 100% { transform: scale(1.9); opacity: 0; }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scale-in {
+    from { opacity: 0; transform: translateY(12px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+}
+
+/* ------------------------------------------------------------------ base */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--primary) 35%, transparent);
+  }
+  h1, h2, h3, h4 {
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  :focus-visible {
+    outline: 2px solid var(--primary-text);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  button { cursor: pointer; }
+  button:disabled { cursor: not-allowed; }
+}
+
+/* ------------------------------------------------------------ utilities */
+@utility container-x {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= 40rem) { padding-inline: 1.5rem; }
+  @media (width >= 64rem) { padding-inline: 2rem; }
+}
+
+@utility section-y {
+  padding-block: 5rem;
+  @media (width >= 48rem) { padding-block: 7rem; }
+}
+
+@utility text-gradient {
+  background: linear-gradient(100deg, var(--primary-text) 0%, var(--violet) 55%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility surface-card {
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl2);
+  box-shadow: 0 1px 0 0 color-mix(in srgb, white 4%, transparent) inset,
+    0 20px 40px -24px rgb(var(--shadow-color) / 0.25);
+}
+
+@utility glass {
+  background: color-mix(in srgb, var(--bg-elevated) 72%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid color-mix(in srgb, var(--line) 85%, transparent);
+}
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--line) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--line) 55%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 75%);
+}
+
+@utility glow-primary {
+  box-shadow: 0 10px 40px -10px rgb(var(--glow) / 0.55);
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary-text);
+}
+
+/* ------------------------------------------- scroll reveal (CSS only)
+   Uses scroll-driven animations — no JavaScript, no hydration cost.
+   Browsers without support simply show content immediately. */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: none; }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    [data-reveal] {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 38%;
+    }
+  }
+}
+
+/* Animated nav indicator */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.3rem;
+  height: 1.5px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary-text), var(--cyan));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after { transform: scaleX(1); }
+
+/* Accordion height animation */
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.accordion-panel[data-open="true"] { grid-template-rows: 1fr; }
+.accordion-panel > div { overflow: hidden; }
+
+/* Hide scrollbar for horizontal scrollers */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Prose for blog / legal */
+.prose-px { color: var(--muted); font-size: 1.0625rem; line-height: 1.8; }
+.prose-px h2 { color: var(--fg); font-size: 1.6rem; font-weight: 600; margin: 2.5rem 0 1rem; line-height: 1.25; }
+.prose-px h3 { color: var(--fg); font-size: 1.2rem; font-weight: 600; margin: 2rem 0 0.75rem; }
+.prose-px p { margin: 0 0 1.25rem; }
+.prose-px ul { margin: 0 0 1.25rem; padding-left: 1.25rem; list-style: disc; }
+.prose-px ol { margin: 0 0 1.25rem; padding-left: 1.25rem; list-style: decimal; }
+.prose-px li { margin: 0.35rem 0; }
+.prose-px li::marker { color: var(--primary-text); }
+.prose-px strong { color: var(--fg); font-weight: 600; }
+.prose-px a { color: var(--primary-text); text-decoration: underline; text-underline-offset: 3px; }
+.prose-px blockquote { border-left: 2px solid var(--primary); padding-left: 1rem; color: var(--fg); font-style: italic; margin: 1.5rem 0; }
+
+/* ----------------------------------------------- reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

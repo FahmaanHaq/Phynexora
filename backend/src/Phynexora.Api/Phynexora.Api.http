@@ -1,0 +1,50 @@
+### Phynexora API — example requests (VS Code REST Client / Rider / Visual Studio)
+@base = http://localhost:5080
+@clientKey = change-me-long-random-string
+@adminKey = dev-admin-key-change-me-0123456789
+
+GET {{base}}/health
+
+### Approved testimonials (public)
+GET {{base}}/api/testimonials
+
+### Submit feedback (always stored as Pending)
+POST {{base}}/api/feedback
+X-Api-Key: {{clientKey}}
+Content-Type: application/json
+
+{ "name": "Jane Perera", "company": "Example Ltd", "rating": 5, "feedback": "The team understood our workflow and delivered a reliable system.", "consentToPublish": true }
+
+### ---------- Admin ----------
+GET {{base}}/api/admin/feedback?status=Pending
+X-Admin-Key: {{adminKey}}
+
+### Approve feedback (makes it visible in the website testimonials carousel)
+POST {{base}}/api/admin/feedback/00000000-0000-0000-0000-000000000000/approve
+X-Admin-Key: {{adminKey}}
+Content-Type: application/json
+
+{ "reviewedBy": "Admin" }
+
+### Reject feedback
+POST {{base}}/api/admin/feedback/00000000-0000-0000-0000-000000000000/reject
+X-Admin-Key: {{adminKey}}
+
+### List enquiries (filter: New, InReview, Contacted, Proposal, Won, Closed, Spam)
+GET {{base}}/api/admin/enquiries?status=New&page=1&pageSize=25
+X-Admin-Key: {{adminKey}}
+
+### Update enquiry status
+PATCH {{base}}/api/admin/enquiries/00000000-0000-0000-0000-000000000000
+X-Admin-Key: {{adminKey}}
+Content-Type: application/json
+
+{ "status": "Contacted", "internalNotes": "Called and booked a discovery meeting." }
+
+### Download enquiry attachment
+GET {{base}}/api/admin/enquiries/00000000-0000-0000-0000-000000000000/attachment
+X-Admin-Key: {{adminKey}}
+
+### Chatbot leads
+GET {{base}}/api/admin/chat-leads
+X-Admin-Key: {{adminKey}}

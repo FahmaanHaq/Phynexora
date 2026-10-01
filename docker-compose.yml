@@ -1,0 +1,38 @@
+# Local full-stack run: SQL Server + API + website
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "${DB_PASSWORD:-Phynexora_Dev_2026!}"
+    ports: ["1433:1433"]
+    volumes: [dbdata:/var/opt/mssql]
+
+  api:
+    build: ./backend
+    depends_on: [db]
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__Default: "Server=db;Database=Phynexora;User Id=sa;Password=${DB_PASSWORD:-Phynexora_Dev_2026!};TrustServerCertificate=True"
+      Database__Provider: SqlServer
+      Database__AutoMigrate: "true"
+      Security__ClientApiKey: "${BACKEND_API_KEY:-change-me-long-random-string}"
+      Security__AdminApiKey: "${ADMIN_API_KEY:-change-me-admin-key-at-least-24-chars}"
+      Security__IpHashSalt: "${IP_HASH_SALT:-change-me}"
+    ports: ["5080:8080"]
+    volumes: [uploads:/app/App_Data]
+
+  web:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_SITE_URL: "${SITE_URL:-http://localhost:3000}"
+    depends_on: [api]
+    environment:
+      API_BASE_URL: http://api:8080
+      BACKEND_API_KEY: "${BACKEND_API_KEY:-change-me-long-random-string}"
+    ports: ["3000:3000"]
+
+volumes:
+  dbdata:
+  uploads:
