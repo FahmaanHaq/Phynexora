@@ -25,7 +25,7 @@ export function PortfolioGrid({ projects }: { projects: Project[] }) {
               onClick={() => { setFilter(c); track("portfolio_view", { filter: c }); }}
               className={cn(
                 "inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all",
-                filter === c ? "border-transparent bg-[linear-gradient(110deg,var(--primary),var(--primary-2))] text-white" : "border-line text-muted hover:border-line-strong hover:text-fg",
+                filter === c ? "border-transparent bg-[linear-gradient(110deg,var(--primary),var(--primary-2))] text-on-primary" : "border-line text-muted hover:border-line-strong hover:text-fg",
               )}
             >
               {c}

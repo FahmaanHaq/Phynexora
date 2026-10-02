@@ -14,8 +14,8 @@ export function TechStack() {
         />
         <div className="relative mt-14">
           <div aria-hidden="true" className="absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 lg:block">
-            <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl border border-line-strong bg-elevated shadow-[0_0_60px_-10px_rgb(var(--glow)/0.6)]">
-              <LogoMark className="h-11 w-11" />
+            <div className="relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-3xl border border-line-strong bg-black shadow-[0_0_60px_-10px_rgb(var(--glow)/0.6)]">
+              <LogoMark className="h-full w-full rounded-[22px]" />
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:gap-6">

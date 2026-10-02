@@ -2,9 +2,9 @@ import type { BlogPost } from "@/content/blog";
 import { cn } from "@/lib/cn";
 
 const tones = {
-  blue: "from-[#1d4ed8] via-[#3b5bdb] to-[#0b1230]",
-  violet: "from-[#6d28d9] via-[#4f46e5] to-[#0b1230]",
-  cyan: "from-[#0891b2] via-[#2563eb] to-[#0b1230]",
+  blue: "from-[#0a9fdc] via-[#075e86] to-[#020507]",
+  violet: "from-[#8fa3ae] via-[#2a3a44] to-[#020507]",
+  cyan: "from-[#00e1fa] via-[#0a7fb0] to-[#020507]",
 };
 
 /** Branded generated cover used when a post has no cover image. */

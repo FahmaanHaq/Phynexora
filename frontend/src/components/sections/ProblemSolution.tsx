@@ -39,7 +39,7 @@ export function ProblemSolution() {
               <ul className="relative mt-6 space-y-4">
                 {comparison.phynexora.map((t) => (
                   <li key={t} className="flex items-center gap-3 text-[0.95rem] font-medium text-fg">
-                    <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-white" aria-hidden="true"><Check className="h-3.5 w-3.5" /></span>
+                    <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-on-primary" aria-hidden="true"><Check className="h-3.5 w-3.5" /></span>
                     {t}
                   </li>
                 ))}

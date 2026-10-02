@@ -10,7 +10,7 @@ type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
   primary:
-    "text-white bg-[linear-gradient(110deg,var(--primary),var(--primary-2))] shadow-[0_10px_30px_-12px_rgb(var(--glow)/0.8)] hover:shadow-[0_16px_40px_-12px_rgb(var(--glow)/0.9)] border border-white/10",
+    "text-on-primary bg-[linear-gradient(110deg,var(--primary),var(--primary-2))] shadow-[0_10px_30px_-12px_rgb(var(--glow)/0.8)] hover:shadow-[0_16px_40px_-12px_rgb(var(--glow)/0.9)] border border-white/10",
   secondary: "text-fg bg-surface/70 border border-line-strong hover:border-primary-text/60 hover:bg-surface-2",
   ghost: "text-fg hover:bg-surface-2 border border-transparent",
   whatsapp: "text-white bg-[#128c4b] hover:bg-[#0f7a41] border border-white/10 shadow-[0_10px_30px_-14px_rgba(31,168,85,0.9)]",

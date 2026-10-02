@@ -41,7 +41,7 @@ export function MobileActionBar() {
       <Link
         href="/contact#enquiry"
         onClick={() => track("quote_request", { location: "mobile_bar" })}
-        className="flex flex-[1.4] items-center justify-center gap-1.5 rounded-xl bg-[linear-gradient(110deg,var(--primary),var(--primary-2))] py-3 text-[13px] font-semibold text-white"
+        className="flex flex-[1.4] items-center justify-center gap-1.5 rounded-xl bg-[linear-gradient(110deg,var(--primary),var(--primary-2))] py-3 text-[13px] font-semibold text-on-primary"
       >
         Get a Quote <ArrowRight className="h-4 w-4" aria-hidden="true" />
       </Link>

@@ -32,9 +32,10 @@ export const siteConfig = {
     whatsappDisplay: env(process.env.NEXT_PUBLIC_WHATSAPP_DISPLAY) || "+94 71 152 3123",
     whatsappDefaultMessage: "Hi Phynexora, I would like to discuss a software project.",
     email: env(process.env.NEXT_PUBLIC_CONTACT_EMAIL) || "phynexora@gmail.com",
-    phone: env(process.env.NEXT_PUBLIC_CONTACT_PHONE),
-    location: env(process.env.NEXT_PUBLIC_CONTACT_LOCATION),
-    workingHours: env(process.env.NEXT_PUBLIC_WORKING_HOURS),
+    phone: env(process.env.NEXT_PUBLIC_CONTACT_PHONE) || "+94711523123",
+    phoneDisplay: env(process.env.NEXT_PUBLIC_CONTACT_PHONE_DISPLAY) || "+94 71 152 3123",
+    location: env(process.env.NEXT_PUBLIC_CONTACT_LOCATION) || "Colombo, Sri Lanka",
+    workingHours: env(process.env.NEXT_PUBLIC_WORKING_HOURS) || "24 Hours",
   },
 
   social: {

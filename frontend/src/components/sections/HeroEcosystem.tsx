@@ -152,8 +152,8 @@ export function HeroEcosystem() {
         >
           <span className="relative flex h-[72px] w-[72px] items-center justify-center sm:h-24 sm:w-24">
             <span aria-hidden="true" className="absolute inset-0 animate-pulse-ring rounded-[28px] bg-[rgb(var(--glow)/0.35)]" />
-            <span className="relative flex h-full w-full items-center justify-center rounded-[24px] border border-white/15 bg-[linear-gradient(145deg,var(--surface-2),var(--surface))] shadow-[0_20px_60px_-15px_rgb(var(--glow)/0.8)] transition-transform duration-300 group-hover:scale-105 group-focus-visible:ring-2 group-focus-visible:ring-[var(--primary-text)] sm:rounded-[28px]">
-              <LogoMark className="h-10 w-10 sm:h-14 sm:w-14" />
+            <span className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[24px] border border-white/15 bg-black shadow-[0_20px_60px_-15px_rgb(var(--glow)/0.8)] transition-transform duration-300 group-hover:scale-105 group-focus-visible:ring-2 group-focus-visible:ring-[var(--primary-text)] sm:rounded-[28px]">
+              <LogoMark priority className="h-full w-full rounded-none" />
             </span>
           </span>
         </button>
@@ -181,7 +181,7 @@ export function HeroEcosystem() {
                   "group-focus-visible:ring-2 group-focus-visible:ring-[var(--primary-text)]",
                 )}
               >
-                <span className={cn("inline-flex h-7 w-7 items-center justify-center rounded-full transition-colors sm:h-8 sm:w-8", on ? "bg-primary text-white" : "bg-surface-2 text-primary-text")}>
+                <span className={cn("inline-flex h-7 w-7 items-center justify-center rounded-full transition-colors sm:h-8 sm:w-8", on ? "bg-primary text-on-primary" : "bg-surface-2 text-primary-text")}>
                   <n.Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
                 </span>
                 <span className="hidden whitespace-nowrap text-xs font-medium text-fg sm:inline">{n.label}</span>

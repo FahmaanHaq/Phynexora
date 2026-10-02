@@ -9,10 +9,11 @@ export function organizationSchema() {
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     url: siteConfig.url,
-    logo: absoluteUrl("/brand/phynexora-mark.svg"),
+    logo: absoluteUrl("/brand/phynexora-mark.png"),
     slogan: siteConfig.tagline,
     description: siteConfig.description,
     ...(sameAs.length ? { sameAs } : {}),
+    address: { "@type": "PostalAddress", addressLocality: "Colombo", addressCountry: "LK" },
     ...(siteConfig.contact.email || siteConfig.contact.phone
       ? {
           contactPoint: [
@@ -22,6 +23,7 @@ export function organizationSchema() {
               ...(siteConfig.contact.email ? { email: siteConfig.contact.email } : {}),
               ...(siteConfig.contact.phone ? { telephone: siteConfig.contact.phone } : {}),
               availableLanguage: ["English"],
+              hoursAvailable: { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], opens: "00:00", closes: "23:59" },
             },
           ],
         }
@@ -84,7 +86,7 @@ export function articleSchema(input: { title: string; description: string; path:
     description: input.description,
     datePublished: input.date,
     author: { "@type": "Organization", name: input.author },
-    publisher: { "@type": "Organization", name: siteConfig.name, logo: { "@type": "ImageObject", url: absoluteUrl("/brand/phynexora-mark.svg") } },
+    publisher: { "@type": "Organization", name: siteConfig.name, logo: { "@type": "ImageObject", url: absoluteUrl("/brand/phynexora-mark.png") } },
     mainEntityOfPage: absoluteUrl(input.path),
   };
 }

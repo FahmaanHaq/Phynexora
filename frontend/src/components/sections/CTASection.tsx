@@ -14,8 +14,8 @@ export function CTASection({
   return (
     <section aria-labelledby={`${location}-title`} className="py-20 sm:py-28">
       <div className="container-x">
-        <div data-reveal className="relative isolate overflow-hidden rounded-[2rem] border border-white/10 bg-[#070b1a] px-6 py-16 text-center sm:px-12 sm:py-24">
-          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_20%_0%,rgba(61,123,255,0.55),transparent_55%),radial-gradient(ellipse_at_90%_100%,rgba(124,92,255,0.45),transparent_55%),radial-gradient(ellipse_at_60%_40%,rgba(34,211,238,0.18),transparent_50%)]" />
+        <div data-reveal className="relative isolate overflow-hidden rounded-[2rem] border border-white/10 bg-[#020507] px-6 py-16 text-center sm:px-12 sm:py-24">
+          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_20%_0%,rgba(0,200,240,0.40),transparent_55%),radial-gradient(ellipse_at_90%_100%,rgba(201,214,222,0.16),transparent_55%),radial-gradient(ellipse_at_60%_40%,rgba(0,225,250,0.14),transparent_50%)]" />
           <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-40 [background-image:linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
           <svg aria-hidden="true" className="absolute inset-0 -z-10 h-full w-full" viewBox="0 0 800 400" preserveAspectRatio="none">
             <path d="M-20 320 C150 260 250 120 400 160 S650 60 820 90" fill="none" stroke="rgba(255,255,255,.35)" strokeWidth="1" strokeDasharray="3 9" className="animate-dash" />

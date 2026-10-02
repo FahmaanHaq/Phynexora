@@ -13,7 +13,7 @@ export function BlogList({ posts }: { posts: BlogPost[] }) {
     <>
       <div role="group" aria-label="Filter by category" className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
         {(["All", ...blogCategories] as const).map((c) => (
-          <button key={c} type="button" aria-pressed={cat === c} onClick={() => setCat(c)} className={cn("shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-all", cat === c ? "border-transparent bg-[linear-gradient(110deg,var(--primary),var(--primary-2))] text-white" : "border-line text-muted hover:border-line-strong hover:text-fg")}>
+          <button key={c} type="button" aria-pressed={cat === c} onClick={() => setCat(c)} className={cn("shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-all", cat === c ? "border-transparent bg-[linear-gradient(110deg,var(--primary),var(--primary-2))] text-on-primary" : "border-line text-muted hover:border-line-strong hover:text-fg")}>
             {c}
           </button>
         ))}

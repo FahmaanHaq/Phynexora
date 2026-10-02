@@ -95,7 +95,7 @@ export function FloatingDock() {
           aria-expanded={chatOpen || menuOpen}
           aria-controls="contact-menu"
           aria-label={chatOpen ? "Close chat" : menuOpen ? "Close contact menu" : "Open contact options"}
-          className="relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-[linear-gradient(135deg,var(--primary),var(--primary-2))] text-white shadow-[0_18px_40px_-12px_rgb(var(--glow)/0.9)] transition-all hover:-translate-y-0.5"
+          className="relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-[linear-gradient(135deg,var(--primary),var(--primary-2))] text-on-primary shadow-[0_18px_40px_-12px_rgb(var(--glow)/0.9)] transition-all hover:-translate-y-0.5"
         >
           {chatOpen || menuOpen ? (
             <Plus className="h-6 w-6 rotate-45 transition-transform" aria-hidden="true" />

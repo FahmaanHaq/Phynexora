@@ -53,7 +53,7 @@ export function ProcessTimeline() {
                   <span
                     className={cn(
                       "relative inline-flex h-12 w-12 items-center justify-center rounded-2xl border text-sm transition-all duration-300 group-focus-visible:ring-2 group-focus-visible:ring-[var(--primary-text)]",
-                      on && "scale-110 border-transparent bg-[linear-gradient(135deg,var(--primary),var(--primary-2))] text-white shadow-[0_12px_30px_-10px_rgb(var(--glow)/0.9)]",
+                      on && "scale-110 border-transparent bg-[linear-gradient(135deg,var(--primary),var(--primary-2))] text-on-primary shadow-[0_12px_30px_-10px_rgb(var(--glow)/0.9)]",
                       done && "border-[color-mix(in_srgb,var(--primary-text)_50%,transparent)] bg-surface text-primary-text",
                       !on && !done && "border-line bg-surface text-subtle group-hover:border-line-strong",
                     )}

@@ -15,7 +15,7 @@ export function Hero() {
       <div className="container-x relative grid items-center gap-12 pb-16 lg:grid-cols-[1.02fr_1fr] lg:gap-8 lg:pb-24">
         <div className="max-w-2xl">
           <p className="inline-flex animate-fade-up items-center gap-2 rounded-full border border-line bg-surface/60 py-1.5 pl-1.5 pr-4 text-xs font-medium text-muted backdrop-blur">
-            <span className="rounded-full bg-[linear-gradient(110deg,var(--primary),var(--primary-2))] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white">Phynexora</span>
+            <span className="rounded-full bg-[linear-gradient(110deg,var(--primary),var(--primary-2))] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-on-primary">Phynexora</span>
             Software &amp; Digital Solutions
           </p>
           <h1 id="hero-title" className="mt-6 animate-fade-up text-[2.6rem] font-semibold leading-[1.03] text-fg [animation-delay:80ms] sm:text-6xl lg:text-[4.1rem]">

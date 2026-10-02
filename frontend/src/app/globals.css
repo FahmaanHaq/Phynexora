@@ -7,41 +7,45 @@
    Dark is the signature look; light mode mirrors every token.
 ------------------------------------------------------------------- */
 :root {
-  --bg: #f6f8fc;
+  /* Light theme — graphite text, deep cyan accents */
+  --bg: #f4f7f9;
   --bg-elevated: #ffffff;
   --surface: #ffffff;
-  --surface-2: #eef2fa;
-  --line: #dde4f1;
-  --line-strong: #c5d0e4;
-  --fg: #0a1023;
-  --muted: #47536f;
-  --subtle: #6f7b98;
-  --primary: #2563eb;
-  --primary-2: #4f46e5;
-  --primary-text: #1d4ed8;
+  --surface-2: #eaf0f3;
+  --line: #d9e3e8;
+  --line-strong: #c0ced6;
+  --fg: #0b141a;
+  --muted: #42535d;
+  --subtle: #66777f;
+  --primary: #12c2ec;      /* logo cyan */
+  --primary-2: #0896d1;
+  --on-primary: #021218;   /* text on cyan buttons */
+  --primary-text: #0373a3;
   --cyan: #0891b2;
-  --violet: #7c3aed;
-  --glow: 37 99 235;
-  --shadow-color: 15 23 42;
+  --violet: #5b6b75;       /* secondary accent: silver/graphite (name kept for compatibility) */
+  --glow: 8 160 210;
+  --shadow-color: 15 30 40;
   color-scheme: light;
 }
 
 .dark {
-  --bg: #05070d;
-  --bg-elevated: #090d18;
-  --surface: #0c1222;
-  --surface-2: #111a2e;
-  --line: #1a2440;
-  --line-strong: #26345a;
-  --fg: #eef2ff;
-  --muted: #9aa6c4;
-  --subtle: #66728f;
-  --primary: #2563eb;
-  --primary-2: #4f46e5;
-  --primary-text: #7ea6ff;
-  --cyan: #22d3ee;
-  --violet: #a78bfa;
-  --glow: 61 123 255;
+  /* Dark theme — near-black like the logo, silver text, glowing cyan */
+  --bg: #020405;
+  --bg-elevated: #070b0e;
+  --surface: #0b1115;
+  --surface-2: #10181d;
+  --line: #18232a;
+  --line-strong: #243440;
+  --fg: #eef4f7;
+  --muted: #9aabb5;
+  --subtle: #64757f;
+  --primary: #1fd0f5;
+  --primary-2: #0a9fdc;
+  --on-primary: #021218;
+  --primary-text: #4fdcff;
+  --cyan: #00e1fa;
+  --violet: #c9d6de;       /* silver */
+  --glow: 0 200 240;
   --shadow-color: 0 0 0;
   color-scheme: dark;
 }
@@ -58,6 +62,7 @@
   --color-subtle: var(--subtle);
   --color-primary: var(--primary);
   --color-primary-2: var(--primary-2);
+  --color-on-primary: var(--on-primary);
   --color-primary-text: var(--primary-text);
   --color-cyan: var(--cyan);
   --color-violet: var(--violet);

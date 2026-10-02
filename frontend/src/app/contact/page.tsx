@@ -55,7 +55,7 @@ export default function ContactPage() {
                 {email ? <TrackedLink href={`mailto:${email}`} event="email_click" eventProps={{ location: "contact_page" }} className="hover:text-primary-text">{email}</TrackedLink> : pending}
               </Channel>
               <Channel icon={<Phone className="h-5 w-5" />} label="Phone">
-                {phone ? <TrackedLink href={`tel:${phone.replace(/\s/g, "")}`} event="phone_click" eventProps={{ location: "contact_page" }} className="hover:text-primary-text">{phone}</TrackedLink> : <span className="font-normal text-muted">Call us via WhatsApp</span>}
+                {phone ? <TrackedLink href={`tel:${phone.replace(/\s/g, "")}`} event="phone_click" eventProps={{ location: "contact_page" }} className="hover:text-primary-text">{siteConfig.contact.phoneDisplay}</TrackedLink> : <span className="font-normal text-muted">Call us via WhatsApp</span>}
               </Channel>
               <Channel icon={<MapPin className="h-5 w-5" />} label="Location">{location || pending}</Channel>
               <Channel icon={<Clock className="h-5 w-5" />} label="Working hours">{workingHours || pending}</Channel>

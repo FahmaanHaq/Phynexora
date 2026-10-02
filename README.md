@@ -66,8 +66,8 @@ All contact details live in **`frontend/src/config/site.ts`**, overridable with 
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | `+94711523123` |
 | `NEXT_PUBLIC_WHATSAPP_DISPLAY` | `+94 71 152 3123` |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | `phynexora@gmail.com` |
-| `NEXT_PUBLIC_CONTACT_PHONE` | *(empty — "Call" buttons stay hidden until set)* |
-| `NEXT_PUBLIC_CONTACT_LOCATION`, `NEXT_PUBLIC_WORKING_HOURS` | *(empty — shown as "To be announced")* |
+| `NEXT_PUBLIC_CONTACT_PHONE` | `+94711523123` |
+| `NEXT_PUBLIC_CONTACT_LOCATION` / `NEXT_PUBLIC_WORKING_HOURS` | `Colombo, Sri Lanka` / `24 Hours` |
 | `NEXT_PUBLIC_SOCIAL_*` | *(empty — icons shown as "coming soon")* |
 | `NEXT_PUBLIC_SITE_URL` | `https://www.phynexora.com` — **set to your real domain** |
 
@@ -122,9 +122,8 @@ Content (services, portfolio, case studies, FAQ, blog) currently lives in typed 
 ## 5. Before going live — checklist
 
 - [ ] Set `NEXT_PUBLIC_SITE_URL` to the real domain.
-- [ ] Replace the temporary logo: `components/ui/Logo.tsx` (single component) and `public/brand/phynexora-mark.svg`, `src/app/icon.svg`.
 - [ ] Replace **sample** portfolio entries and case studies in `src/content/portfolio.ts` with real projects (set `isSample: false`). Add `results` only when verified and approved by the client.
-- [ ] Add phone, location, working hours and social links when available.
+- [ ] Add social media links when available.
 - [ ] Review the three starter blog articles and the Privacy Policy / Terms with your legal adviser.
 - [ ] Configure Turnstile, SMTP notifications and analytics.
 - [ ] Generate strong values for `BACKEND_API_KEY` / `Security__ClientApiKey`, `Security__AdminApiKey` and `Security__IpHashSalt`.

@@ -219,7 +219,7 @@ export function ChatWidget() {
               <p
                 className={cn(
                   "max-w-[85%] whitespace-pre-line rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed",
-                  m.role === "user" && "rounded-tr-md bg-[linear-gradient(110deg,var(--primary),var(--primary-2))] text-white",
+                  m.role === "user" && "rounded-tr-md bg-[linear-gradient(110deg,var(--primary),var(--primary-2))] text-on-primary",
                   m.role === "bot" && !m.kind && "rounded-tl-md border border-line bg-surface text-fg",
                   m.kind === "error" && "flex gap-2 rounded-tl-md border border-amber-500/30 bg-amber-500/10 text-fg",
                 )}
@@ -280,7 +280,7 @@ export function ChatWidget() {
                 aria-describedby={inputError ? "chat-input-error" : undefined}
                 className="min-w-0 flex-1 bg-transparent px-2 py-2 text-[16px] text-fg placeholder:text-subtle focus:outline-none sm:text-sm"
               />
-              <button type="submit" disabled={busy || !input.trim()} aria-label="Send message" className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary text-white transition-all hover:-translate-y-0.5 disabled:opacity-40">
+              <button type="submit" disabled={busy || !input.trim()} aria-label="Send message" className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary text-on-primary transition-all hover:-translate-y-0.5 disabled:opacity-40">
                 <SendHorizontal className="h-4 w-4" aria-hidden="true" />
               </button>
             </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { footerNav, siteConfig } from "@/config/site";
 import { Logo } from "@/components/ui/Logo";
 import { SocialLinks } from "@/components/ui/SocialLinks";
@@ -59,10 +59,16 @@ export function Footer() {
                 <li>
                   {(
                     <TrackedLink href={`tel:${phone.replace(/\s/g, "")}`} event="phone_click" eventProps={{ location: "footer" }} className="inline-flex items-center gap-2.5 text-muted transition-colors hover:text-fg">
-                      <Phone className="h-4 w-4 text-primary-text" aria-hidden="true" /> {phone}
+                      <Phone className="h-4 w-4 text-primary-text" aria-hidden="true" /> {siteConfig.contact.phoneDisplay}
                     </TrackedLink>
                   )}
                 </li>
+                )}
+                {siteConfig.contact.location && (
+                  <li className="inline-flex items-center gap-2.5 text-muted"><MapPin className="h-4 w-4 text-primary-text" aria-hidden="true" /> {siteConfig.contact.location}</li>
+                )}
+                {siteConfig.contact.workingHours && (
+                  <li className="flex items-center gap-2.5 text-muted"><Clock className="h-4 w-4 text-primary-text" aria-hidden="true" /> {siteConfig.contact.workingHours}</li>
                 )}
               </ul>
               <Link href="/contact#enquiry" className="mt-4 inline-flex py-2.5 text-sm font-medium text-primary-text hover:underline">Start a project →</Link>

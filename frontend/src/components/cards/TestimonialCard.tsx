@@ -12,7 +12,7 @@ export function TestimonialCard({ t }: { t: Testimonial }) {
       </div>
       <blockquote className="mt-4 flex-1 text-base leading-relaxed text-fg">“{t.feedback}”</blockquote>
       <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-5">
-        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--primary),var(--violet))] text-sm font-semibold text-white" aria-hidden="true">
+        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--primary),var(--violet))] text-sm font-semibold text-on-primary" aria-hidden="true">
           {t.name.split(" ").map((p) => p[0]).slice(0, 2).join("").toUpperCase()}
         </span>
         <span>

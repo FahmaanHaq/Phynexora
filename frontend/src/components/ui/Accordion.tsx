@@ -25,7 +25,7 @@ export function Accordion({ items, defaultOpen = 0 }: { items: { question: strin
                 className="flex w-full items-center justify-between gap-6 px-5 py-5 text-left text-base font-medium text-fg transition-colors hover:text-primary-text sm:px-7 sm:py-6 sm:text-lg"
               >
                 {item.question}
-                <span className={cn("inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300", isOpen ? "rotate-45 border-transparent bg-primary text-white" : "border-line text-muted")} aria-hidden="true">
+                <span className={cn("inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300", isOpen ? "rotate-45 border-transparent bg-primary text-on-primary" : "border-line text-muted")} aria-hidden="true">
                   <Plus className="h-4 w-4" />
                 </span>
               </button>
